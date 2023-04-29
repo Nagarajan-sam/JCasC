@@ -1,0 +1,17 @@
+  GNU nano 6.2                                                pipeline.yaml                                                         
+jenkins:
+  systemMessage: "Pipeline job"
+jobs:
+  - script: |
+      pipeline {
+        agent any
+        stages{
+          stage("Reload configuration"){
+            steps{
+              script{
+                jenkins.instance.reload()
+              }
+            }
+          }
+        }
+      }
