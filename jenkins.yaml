@@ -1,8 +1,8 @@
 ---
 jenkins:
   agentProtocols:
-    - "JNLP4-connect"
-    - "Ping"
+  - "JNLP4-connect"
+  - "Ping"
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
@@ -11,10 +11,14 @@ jenkins:
       excludeClientIPFromCrumb: false
   disableRememberMe: false
   labelAtoms:
-    - name: "built-in"
+  - name: "built-in"
   markupFormatter: "plainText"
   mode: NORMAL
   myViewsTabBar: "standard"
+  nodeProperties:
+  - envVars:
+      env:
+      - key: "MAVEN_OPTS"
   numExecutors: 2
   primaryView:
     all:
@@ -29,23 +33,33 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-        - id: "nagarajan"
-          name: "nagarajan sampath@gmail.com"
-          properties:
-            - "myView"
-            - preferredProvider:
-              providerId: "default"
-            - "timezone"
-            - mailer:
-              emailAddress: "1234@gmail.com"
-            - "apiToken"
+      - id: "nagarajan"
+        name: "NagarajanSampath"
+        properties:
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "nagarajan.sampath03@gmail.com"
+        - "apiToken"
+      - id: "user1"
+        name: "Admin User"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "kk@gmail.com"
   slaveAgentPort: -1
   updateCenter:
     sites:
-      - id: "default"
-        url: "https://updates.jenkins.io/update-center.json"
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
   views:
-    - all:
+  - all:
       name: "all"
   viewsTabBar: "standard"
 globalCredentialsConfiguration:
@@ -67,7 +81,7 @@ security:
 unclassified:
   buildDiscarders:
     configuredBuildDiscarders:
-      - "jobBuildDiscarder"
+    - "jobBuildDiscarder"
   buildStepOperation:
     enabled: false
   email-ext:
@@ -81,7 +95,7 @@ unclassified:
       Check console output at $BUILD_URL to view the results.
     defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
     defaultTriggerIds:
-      - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
     maxAttachmentSize: -1
     maxAttachmentSizeMb: -1
     precedenceBulk: false
@@ -98,9 +112,11 @@ unclassified:
     apiRateLimitChecker: ThrottleForNormalize
   gitHubPluginConfig:
     hookUrl: "http://localhost:8080/github-webhook/"
+  githubPullRequests:
+    actualiseOnFactory: false
   globalTimeOutConfiguration:
     operations:
-      - "abortOperation"
+    - "abortOperation"
     overwriteable: false
   injectionConfig:
     allowUntrusted: false
@@ -116,6 +132,8 @@ unclassified:
     charset: "UTF-8"
     useSsl: false
     useTls: false
+  mavenModuleSet:
+    localRepository: "default"
   pollSCM:
     pollingThreadCount: 10
   scmGit:
@@ -130,11 +148,13 @@ unclassified:
     allPipelines: false
     elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
     systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  whitelist:
+    enabled: false
 tool:
   git:
     installations:
-      - home: "git"
-        name: "Default"
+    - home: "git.exe"
+      name: "Default"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
