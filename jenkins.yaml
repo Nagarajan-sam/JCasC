@@ -29,14 +29,14 @@ jenkins:
       enableCaptcha: false
       users:
       - id: "nagarajan"
-        name: "nagarajan sampath@gmail.com"
+        name: "nagarajan sampath"
         properties:
         - "myView"
         - preferredProvider:
             providerId: "default"
         - "timezone"
         - mailer:
-            emailAddress: "1234@gmail.com"
+            emailAddress: "naga@gmail.com"
         - "apiToken"
   slaveAgentPort: -1
   updateCenter:
@@ -96,7 +96,7 @@ unclassified:
   gitHubConfiguration:
     apiRateLimitChecker: ThrottleForNormalize
   gitHubPluginConfig:
-    hookUrl: "http://localhost:8080/github-webhook/"
+    hookUrl: "http://13.113.151.47:8080/github-webhook/"
   globalTimeOutConfiguration:
     operations:
     - "abortOperation"
@@ -104,13 +104,14 @@ unclassified:
   injectionConfig:
     allowUntrusted: false
     enabled: false
+    enforceUrl: false
     injectCcudExtension: false
     injectMavenExtension: false
   junitTestResultStorage:
     storage: "file"
   location:
     adminAddress: "address not configured yet <nobody@nowhere>"
-    url: "http://localhost:8080/"
+    url: "http://13.113.151.47:8080/"
   mailer:
     charset: "UTF-8"
     useSsl: false
