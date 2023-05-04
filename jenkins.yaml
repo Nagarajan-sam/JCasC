@@ -1,4 +1,5 @@
 jenkins:
+  systemMessage: "This is jenkins configuration as code"
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
@@ -138,17 +139,3 @@ tool:
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
-jobs:
-  - script: >
-      pipeline {
-        agent any
-        stages{
-          stage("Reload configuration"){
-            steps{
-              script{
-                jenkins.instance.reload()
-              }
-            }
-          }
-        }
-      }
